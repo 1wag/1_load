@@ -1,0 +1,77 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Loading screen styles */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: aliceblue; /* AliceBlue background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.loader {
+  border: 8px solid white; /* White border */
+  border-top: 8px solid black; /* Black spinner */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Progress bar styling */
+.progress-bar-container {
+  width: 80%;
+  height: 8px;
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: black;
+  border-radius: 5px;
+  animation: loadProgress 5s linear forwards;
+}
+
+@keyframes loadProgress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+p {
+  font-size: 18px;
+  color: black; /* Black text */
+  margin-top: 10px;
+}
+
+/* Styling for the main content */
+#content {
+  text-align: center;
+  padding: 20px;
+}
